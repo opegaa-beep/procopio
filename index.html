@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comunicação e Oratória | Mentoria com Alan Procópio</title>
+    <meta name="description" content="Desenvolva a maestria da comunicação. Mentoria de Oratória para posicionamento profissional, vendas, liderança e desenvolvimento vocacional.">
+    
+    <!-- Fontes Premium do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-dark: #050505;
+            --bg-card: #0f0f0f;
+            --gold-primary: #D4AF37;
+            --gold-light: #F2D06B;
+            --gold-dark: #997B2F;
+            --gold-gradient: linear-gradient(135deg, #F2D06B 0%, #D4AF37 50%, #997B2F 100%);
+            --text-primary: #F5F5F5;
+            --text-secondary: #A3A3A3;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-dark);
+            background-image: radial-gradient(circle at 50% 0%, #1a150a 0%, var(--bg-dark) 60%);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* HEADER */
+        header {
+            padding: 25px 0;
+            text-align: center;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.15);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(5, 5, 5, 0.8);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* HERO & VSL SECTION */
+        .hero {
+            padding: 60px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 span {
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-style: italic;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            max-width: 750px;
+            margin: 0 auto 40px;
+            font-weight: 300;
+        }
+
+        /* VIDEO WRAPPER - Adaptado do código que você enviou */
+        .video-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 50px;
+            max-width: 900px;
+        }
+
+        .video-wrapper {
+            width: 100%;
+            position: relative;
+            padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 12px;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.15), 0 20px 50px rgba(0,0,0,0.5);
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* BUTTONS */
+        .btn-cta {
+            display: inline-block;
+            background: var(--gold-gradient);
+            color: #050505;
+            padding: 22px 55px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.25);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+            transition: left 0.6s;
+        }
+
+        .btn-cta:hover::before {
+            left: 100%;
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 40px rgba(212, 175, 55, 0.4);
+        }
+
+        /* SECTIONS GENERAL */
+        section {
+            padding: 100px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 2px;
+            background: var(--gold-gradient);
+            margin: 20px auto 0;
+        }
+
+        /* BENEFITS */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .benefit-card {
+            background: var(--bg-card);
+            padding: 35px 30px;
+            border-radius: 8px;
+            border: 1px solid rgba(212, 175, 55, 0.15);
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--gold-gradient);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(212, 175, 55, 0.4);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+        }
+
+        .benefit-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .benefit-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .benefit-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 12px;
+            color: var(--gold-light);
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+        }
+
+        .benefit-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* INSTRUCTOR */
+        .instructor {
+            background: linear-gradient(180deg, var(--bg-dark) 0%, #0d0b06 100%);
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .instructor-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 35px;
+        }
+
+        .instructor-img-wrapper {
+            position: relative;
+            width: 220px;
+            height: 220px;
+        }
+
+        .instructor-img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid transparent;
+            background: var(--gold-gradient);
+            padding: 4px;
+            box-shadow: 0 0 40px rgba(212, 175, 55, 0.3);
+        }
+
+        .instructor-img-inner {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #050505;
+        }
+
+        .credentials {
+            text-align: left;
+            max-width: 750px;
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .credentials ul {
+            list-style: none;
+        }
+
+        .credentials li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            color: var(--text-secondary);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .credentials li:last-child {
+            border-bottom: none;
+        }
+
+        .credentials li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--gold-primary);
+            font-size: 1.2rem;
+        }
+
+        .instagram-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--gold-light);
+            text-decoration: none;
+            font-weight: 500;
+            margin-top: 20px;
+            border: 1px solid rgba(212, 175, 55, 0.4);
+            padding: 12px 25px;
+            border-radius: 50px;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .instagram-link:hover {
+            background: rgba(212, 175, 55, 0.1);
+            border-color: var(--gold-primary);
+        }
+
+        /* PRICING */
+        .pricing-card {
+            background: linear-gradient(145deg, #14120b, #0a0905);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 16px;
+            padding: 60px 40px;
+            text-align: center;
+            max-width: 520px;
+            margin: 0 auto;
+            position: relative;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 40px rgba(212, 175, 55, 0.05);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -16px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--gold-gradient);
+            color: #050505;
+            padding: 10px 30px;
+            border-radius: 30px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        .price-label {
+            color: var(--text-secondary);
+            margin-top: 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .price {
+            font-size: 4rem;
+            font-weight: 700;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 10px 0 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .price span {
+            font-size: 1.5rem;
+        }
+
+        .price-sub {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            margin-bottom: 25px;
+        }
+
+        .price-sub strong {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .payment-methods {
+            margin: 25px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .payment-methods span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(212, 175, 55, 0.15);
+        }
+
+        .guarantee-icon {
+            font-size: 2.5rem;
+        }
+
+        .guarantee-text {
+            text-align: left;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .guarantee-text strong {
+            color: var(--gold-light);
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 4px;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #020202;
+            padding: 50px 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        footer a {
+            color: var(--gold-primary);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: var(--gold-light);
+        }
+
+        /* FLOATING WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 32px;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+            z-index: 1000;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 2px solid rgba(255,255,255,0.1);
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.5);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .section-title { font-size: 2rem; }
+            .price { font-size: 3.2rem; }
+            .btn-cta { padding: 20px 30px; font-size: 1rem; width: 100%; }
+            .pricing-card { padding: 50px 25px; }
+            .credentials { padding: 20px; }
+            .video-container { max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Alan Procópio | Mentoria</div>
+        </div>
+    </header>
+
+    <!-- HERO COM VÍDEO EM PRIMEIRO LUGAR -->
+    <section class="hero">
+        <div class="container">
+            <h1>Desenvolva a <span>Maestria da Comunicação</span> e Transforme Sua Presença Profissional</h1>
+            <p class="subtitle">Assista ao vídeo abaixo e descubra como dominar sua oratória para posicionamento, vendas, liderança e desenvolvimento vocacional.</p>
+            
+            <!-- VÍDEO DO YOUTUBE - Adaptado do código que você enviou -->
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        loading="lazy"
+                        src="https://youtube.com/embed/4YuGOQV7TIw?autoplay=0&controls=1" 
+                        frameborder="0" 
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+            </div>
+
+            <a href="https://pay.kiwify.com.br/ZBFIrMM" class="btn-cta">Sim, Quero Garantir Minha Vaga Agora</a>
+            <p style="margin-top: 20px; font-size: 0.85rem; color: var(--text-secondary); letter-spacing: 0.5px;">🔒 Pagamento 100% seguro e criptografado via Kiwify</p>
+        </div>
+    </section>
+
+    <!-- O QUE VOCÊ VAI DESENVOLVER -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">O Que Você Vai Desenvolver</h2>
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h3>Posicionamento Profissional</h3>
+                    <p>Construa uma imagem de autoridade e confiança inabalável em qualquer ambiente corporativo ou social.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💼</div>
+                    <h3>Técnicas de Vendas</h3>
+                    <p>Utilize a comunicação estratégica para persuadir, negociar e fechar mais negócios com ética.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💻</div>
+                    <h3>Oratória Digital</h3>
+                    <p>Domine a arte de se comunicar com impacto e presença em reuniões online, vídeos e redes sociais.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🧠</div>
+                    <h3>Auto Liderança</h3>
+                    <p>Controle suas emoções e desenvolva a inteligência emocional necessária para falar com segurança.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon"></div>
+                    <h3>Liderança de Equipes</h3>
+                    <p>Aprenda a inspirar, motivar e guiar pessoas através de uma comunicação clara, empática e assertiva.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚀</div>
+                    <h3>Desenvolvimento Vocacional</h3>
+                    <p>Alinhe sua comunicação aos seus propósitos de vida e carreira para alcançar resultados extraordinários.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE O MENTOR -->
+    <section class="instructor">
+        <div class="container">
+            <h2 class="section-title">Seu Mentor</h2>
+            <div class="instructor-content">
+                <div class="instructor-img-wrapper">
+                    <!-- FOTO DO ALAN -->
+                    <div class="instructor-img">
+                        <img src="foto-alan.jpg" alt="Alan Procópio" class="instructor-img-inner">
+                    </div>
+                </div>
+                
+                <div style="max-width: 800px;">
+                    <h3 style="color: var(--gold-light); margin-bottom: 15px; font-size: 1.8rem;">Alan Procópio</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 30px; font-size: 1.05rem; line-height: 1.8;">
+                        Natural de Curitiba/PR e residindo em Teófilo Otoni/MG desde 2013. Há mais de 10 anos, dedica-se a palestras, cursos, seminários, coaching e consultorias empresariais e individuais. Seu foco é atingir todos aqueles que buscam aprimorar o Desenvolvimento Humano em suas vidas pessoais e profissionais.
+                    </p>
+                    
+                    <div class="credentials">
+                        <ul>
+                            <li>Pesquisador de campo do Comportamento Humano</li>
+                            <li>Marketing & Propaganda pelo Centro Europeu de Curitiba</li>
+                            <li>Instrutor de Filosofia à Maneira Clássica (Nova Acrópole)</li>
+                            <li>Diretor da Organização Internacional Nova Acrópole de Teófilo Otoni</li>
+                            <li>Faixa Preta – Terceiro Dan no estilo Nei Kung</li>
+                            <li>Instrutor de TAI CHI CHUAN pelo Instituto Bodhidharma</li>
+                            <li>Life Coaching e Executive & Business Coaching pela Sociedade Brasileira de Coaching</li>
+                            <li>Formado em EMPRETECO</li>
+                        </ul>
+                    </div>
+
+                    <a href="https://www.instagram.com/oratoria.procopio/" target="_blank" class="instagram-link">
+                        📷 Siga-me no Instagram @oratoria.procopio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- OFERTA E PREÇO -->
+    <section id="oferta">
+        <div class="container">
+            <h2 class="section-title">Invista em Você Hoje</h2>
+            <div class="pricing-card">
+                <div class="pricing-badge">Oferta Especial</div>
+                <p class="price-label">Acesso completo à Mentoria</p>
+                <div class="price">R$ 97<span>,00</span></div>
+                
+                <!-- PARCELAMENTO -->
+                <p class="price-sub">ou em até <strong>12x de R$ 10,03</strong> no cartão</p>
+                <p class="price-sub" style="margin-top: -15px; font-size: 0.9rem;">Acesso imediato e vitalício</p>
+                
+                <div class="payment-methods">
+                    <span>💳 Cartão de Crédito</span>
+                    <span>💠 PIX</span>
+                </div>
+
+                <a href="https://pay.kiwify.com.br/ZBFIrMM" class="btn-cta" style="width: 100%;">Quero Me Inscrever Agora</a>
+
+                <div class="guarantee">
+                    <div class="guarantee-icon">🛡️</div>
+                    <div class="guarantee-text">
+                        <strong>Garantia Incondicional de 7 Dias</strong>
+                        Se não gostar do conteúdo, devolvemos 100% do seu dinheiro. Sem perguntas, sem burocracia.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Alan Procópio - Mentoria em Comunicação e Oratória. Todos os direitos reservados.</p>
+            <p style="margin-top: 15px; font-size: 0.85rem;">
+                Dúvidas? <a href="https://wa.me/5533998347219" target="_blank">Fale conosco pelo WhatsApp</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- BOTÃO FLUTUANTE DO WHATSAPP -->
+    <a href="https://wa.me/5533998347219?text=Ol%C3%A1%20Alan%2C%20tenho%20interesse%20na%20Mentoria%20de%20Comunica%C3%A7%C3%A3o%20e%20Orat%C3%B3ria%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida." class="whatsapp-float" target="_blank" title="Fale comigo no WhatsApp">
+        💬
+    </a>
+
+</body>
+</html>
